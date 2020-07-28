@@ -1,0 +1,78 @@
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>easyway</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../media/assets/css/Gilroy-Bold%20☞.css">
+    <link rel="stylesheet" href="../media/assets/css/Gilroy-Heavy%20☞.css">
+    <link rel="stylesheet" href="../media/assets/css/Gilroy-Light%20☞.css">
+    <link rel="stylesheet" href="../media/assets/css/Gilroy-Medium%20☞.css">
+    <link rel="stylesheet" href="../media/assets/css/Gilroy-Regular%20☞.css">
+    <link rel="stylesheet" href="../media/assets/css/HolidayFree.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Bold.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Bold%20Italic.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Heavy.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Heavy%20Italic.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Italic.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Light.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Light%20Italic.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Medium.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Medium%20Italic.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Regular.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Semibold.css">
+    <link rel="stylesheet" href="../media/assets/css/SF%20UI%20Text%20Semibold%20Italic.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../media/assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="../media/assets/css/Header-Blue.css">
+    <link rel="stylesheet" href="../media/assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand sticky-top navigation-clean-search" style="background-color: #F76565;height: 50px;">
+        <div class="container"><a class="navbar-brand" href="./" style="font-family: HolidayFree;font-size: 30px;">EasyWay</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+
+    </nav>
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <!-- Empty div -->
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      {% if form.errors %}
+        <p> Some Information Might be Incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h3 class="text-center">EasyWay Sign Up</h3>
+        </div>
+        <div class="panel-body">
+
+          
+          <form action="{% url 'signup' %}" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}   
+
+          <input type="submit" value="Signup" />
+
+          </form>
+          <p>You Already have an account?</p>
+ <a href="{% url 'login' %}">Login</a>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- empty div -->
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+{% endblock %}

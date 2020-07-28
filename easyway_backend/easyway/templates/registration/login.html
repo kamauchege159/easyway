@@ -1,0 +1,46 @@
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <!-- Empty div -->
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+      {% endif %}
+      <center>
+      <div class="panel panel-default">
+
+        <div class="panel-heading" style="font-family: HolidayFree;font-size: 30px">
+          <h3 class="text-center">EasyWay Sign In</h3>
+        </div>
+        <div class="panel-body">
+
+          <form  action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" name="username" placeholder="Username">
+              <label for="password">Password:</label>
+              <input type="password" name="password" placeholder="Password">
+              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+          </form>
+          <a href="{% url 'signup' %}">Signup</a>
+
+        </div>
+
+      </div>
+</center>
+    </div>
+    <!-- empty div -->
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+{% endblock %}
