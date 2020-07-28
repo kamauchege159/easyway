@@ -81,7 +81,16 @@ def bungalow_1(request):
 
 
 def create_activity(request):
-    return render(request, "create-activity.html")
+    if request.method == 'POST':
+        form = createActivityForm(request.POST)       
+        if form.is_valid():
+            activities = form.save()
+            activities.save()        
+            return redirect('create_activity')
+    else:
+        form = createActivityForm()
+
+    return render(request, "create-activity.html", {"form": form})
 
 def create_bungalow(request):
     return render(request, "create-bungalow.html")
