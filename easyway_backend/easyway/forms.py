@@ -14,8 +14,14 @@ class customersForm(forms.ModelForm):
 		model = user
 		fields = ('firstname','lastname','email','password','phonenumber','AccountNumber','profile_pic')
 
-# class packagesForm(forms.ModelForm):
-# 	package_id=forms.ModelChoiceField(queryset=user.objects.all(),initial='')
-# 	class Meta:
-# 		model = packages
-# 		fields = ('package_id',)
+class packagesForm(forms.ModelForm):
+	class Meta:
+		model = packages
+
+		exclude = ['activity_title', 'car_model','name', 'email',]
+
+class createActivityForm(forms.ModelForm):
+	class Meta:
+		 model = activities
+
+		 exclude = ['email',]
