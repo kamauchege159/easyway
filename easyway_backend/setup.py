@@ -80,7 +80,7 @@ setup(
                     'django-cors-headers==3.4.0',
                     'django-google-maps==0.12.1',
                     'django-registration==2.4.1',
-                    'djangorestframework==3.11.0',
+                    'djangorestframework==3.11.2',
                     'Pillow==5.0.0',
                     'pytz==2020.1',
                     'sqlparse==0.3.1',
