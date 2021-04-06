@@ -79,7 +79,7 @@ setup(
                     'django-bootstrap3==9.1.0',
                     'django-cors-headers==3.4.0',
                     'django-google-maps==0.12.1',
-                    'django-registration==2.4.1',
+                    'django-registration==3.1.2',
                     'djangorestframework==3.11.0',
                     'Pillow==5.0.0',
                     'pytz==2020.1',
